@@ -1,5 +1,7 @@
 # FlashCards Project Plan & Pseudocode
 
+(Project Benchmarks & Schedule)[https://trello.com/b/SOkAxuLZ/flashcards-project]
+
 ## Iteration 1:
 
 ### Cards
