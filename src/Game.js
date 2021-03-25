@@ -1,9 +1,9 @@
-const Card = require('./Card');
-const data = require('./data');
-const Round = require('./Round');
-const Deck = require('./Deck');
-const prototypeQuestions = data.prototypeData;
 const util = require('./util');
+const data = require('./data');
+const prototypeQuestions = data.prototypeData;
+const Card = require('./Card');
+const Deck = require('./Deck');
+const Round = require('./Round');
 
 class Game {
   constructor() {
@@ -12,10 +12,8 @@ class Game {
     this.currentRound = {};
   }
 
-  start(cardSet) {
-    // add code to "create Cards" and "put Cards in Deck"
-    // this.cards = cardSet.cards || prototypeQuestions;
-    this.cards = prototypeQuestions;
+  start() {
+    this.cards = prototypeQuestions.map(card => new Card (card.id, card.question, card.answers, card.correctAnswer));
     this.currentDeck = new Deck(this.cards);
     this.currentRound = new Round(this.currentDeck);
     this.printMessage(this.currentDeck, this.currentRound);

@@ -20,28 +20,26 @@ class Round {
     if (!status) {
       this.incorrectGuesses.push(this.currentCard.id);
     }
-
+    
     this.turns++;
     this.calculatePercentCorrect();
     this.currentCard = this.deck[this.currentCard.id++];
+    return turn.giveFeedback();
 
-    if (this.turns === this.deck.length) {
-      return turn.giveFeedback() + "\n" + this.endRound();
-    } else {
-      return turn.giveFeedback();
-    }
+    // if (this.turns === this.deck.length) {
+    //   return turn.giveFeedback() + "\n" + this.endRound();
+    // } else {
+    //   return turn.giveFeedback();
+    // }
   }
 
   calculatePercentCorrect() {
     this.percentCorrect = Math.round((((this.turns - this.incorrectGuesses.length) / this.turns) * 100));
-    
     return this.percentCorrect;
   }
 
   endRound() {
-    if (this.turns === this.deck.length) {
       return `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`;
-    }
   }
 }
 
