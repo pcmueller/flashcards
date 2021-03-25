@@ -1,4 +1,4 @@
-const Turn = require("./Turn");
+const Turn = require('./Turn');
 
 class Round {
   constructor(cardSet = []) {
