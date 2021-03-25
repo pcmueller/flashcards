@@ -31,17 +31,17 @@
 **example:**
 >const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
 >const turn = new Turn('pug', card);
-
+>
 >turn.returnGuess();    // => 'pug'
-
+>
 >turn.returnCard();     // => { id: 1,
->                       //      question: 'What is Robbie\'s favorite animal',
+>                       //      question: 'What is Robbie\'s favorite >animal',
 >                       //      answers: ['sea otter', 'pug', 'capybara'],
 >                       //      correctAnswer: 'sea otter'
 >                       //    }
-
+>
 >turn.evaluateGuess();  // => false
-
+>
 >turn.giveFeedback();   // => incorrect!
 
 #### PSEUDOCODE:
@@ -89,9 +89,9 @@
 >const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
 >const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
 >const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-
+>
 >const deck = new Deck([card1, card2, card3]);
-
+>
 >deck.countCards(); // => 3
 
 
@@ -137,37 +137,37 @@
 >const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
 >const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
 >const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
-
+>
 >const deck = new Deck([card1, card2, card3]);
-
+>
 >const round = new Round(deck);
-
+>
 >round.deck;   // => [card1, card2, card3];
-
+>
 >round.returnCurrentCard(); // => { id: 1,
->                           //      question: 'What is Robbie\'s favorite animal',
->                           //      answers: ['sea otter', 'pug', 'capybara'],
+>                           //      question: 'What is Robbie\'s favorite >animal',
+>                           //      answers: ['sea otter', 'pug', 'capybara']>,
 >                           //      correctAnswer: 'sea otter'
 >                           //    }
-
+>
 >round.turns; // => 0
-
+>
 >round.incorrectGuesses;     // => []
-
+>
 >round.takeTurn('sea otter'); // => 'correct!'
-
+>
 >round.takeTurn('spleen');   // => 'incorrect!'
-
+>
 >round.turns; // => 2
-
+>
 >round.incorrectGuesses;     // => [14]
-
+>
 >round.returnCurrentCard();    // => { id: 12,
->            	              //      question: 'What is Travis\'s favorite stress reliever?',
->            	              //      answers: ['listening to music', 'watching Netflix', 'playing with bubble wrap'],
+>            	              //      question: 'What is Travis\'s favorite >stress reliever?',
+>            	              //      answers: ['listening to music', >'watching Netflix', 'playing with bubble wrap'],
 >            	              //      correctAnswer: 'playing with bubble wrap'
 >            	              //    }
-
+>
 >round.calculatePercentCorrect(); // => 50
 
 #### PSEUDOCODE:
@@ -227,4 +227,43 @@
     - Test that `calculatePercentCorrect()` returns the correct percentage
     - Test that after final card's turn has been taken, round ends (returns endGame() string)
 
-  
+
+## Iteration 3:
+
+### Playing the Game
+
+* Now that we have all of our classes and methods set up, we can connect this to the pre-existing code to make the game playable through the CLI (Command-Line-Interface).
+
+### Game
+
+* As you may have noticed, your Game class has two methods fleshed out already: printMessage and printQuestion. We are going to abandon testing for these methods - as the techniques for this type of testing are beyond the scope of this project.
+
+- Your Game class should meet these other requirements:
+    - Should keep track of the currentRound
+    - start: method that starts everything
+      - Creates Cards
+      - Puts Cards in a Deck
+      - Creates a new Round using the Deck
+      - invokes printMessage to display the message in the CLI
+      - invokes printQuestion to kick off our helper functions that allow interaction via the CLI
+
+**Note: The helper functions are all fleshed out and fit to work with classes/methods that meet the requirements in the past iterations.**
+
+#### HINT: 
+Look at the file being run when we want to start the game. Think about where you need to invoke your Game.start method.
+
+**example:**
+> game.currentRound; // => Round {...} (The new Round object that has been >instatiated)
+
+
+#### PSEUDOCODE:
+
+##### Game.js
+
+- Connect Game.js to any required class instantiator files (i.e. Round.js)
+- Declare `currentRound` property with no default value
+- Add `start()` method and assign new instance of `Round` as `this.currentRound` value
+
+##### Game-test.js
+
+- 
