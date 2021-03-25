@@ -40,4 +40,4 @@ Then your game should initialize, displaying a welcome message and the first que
 
 ![picture](./assets/peteandsteve.jpg)
 
-* (🦥 Peter Muellerleile)[https://github.com/pcmueller]
+(🦥 Peter Muellerleile)[https://github.com/pcmueller]
