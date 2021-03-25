@@ -34,7 +34,7 @@ Running `node index.js` from the root of your project should result in the follo
 Node server running on port 3000
 ```
 
-Then your game should initialize, displaying a welcome message and the first question in your deck!
+Your game should initialize, displaying a welcome message and the quizzing you with the first Flash Card in your deck!
 
 ## Contributor
 
