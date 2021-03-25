@@ -11,6 +11,10 @@ describe('Round', function() {
     expect(Round).to.be.a('function');
   })
 
+  it.skip('should be an instance of Deck', function() {
+    const deck = new Deck();
+    const round = new Round(deck);
+    expect(round).to.be.an.instanceOf(Round);
+  });
 
-  
 });
