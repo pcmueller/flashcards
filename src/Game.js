@@ -8,20 +8,20 @@ const Round = require('./Round');
 class Game {
   constructor() {
     this.cards;
-    this.currentDeck = [];
-    this.currentRound = {};
+    this.deck = [];
+    this.round = {};
   }
 
   start() {
     this.cards = prototypeQuestions.map(card => new Card (card.id, card.question, card.answers, card.correctAnswer));
-    this.currentDeck = new Deck(this.cards);
-    this.currentRound = new Round(this.currentDeck);
-    this.printMessage(this.currentDeck, this.currentRound);
-    this.printQuestion(this.currentRound);
+    this.deck = new Deck(this.cards);
+    this.round = new Round(this.deck);
+    this.printMessage(this.deck, this.round);
+    this.printQuestion(this.round);
   }
 
   printMessage(deck, round) {
-    console.log(`Welcome to FlashCards! You are playing with ${this.currentDeck.countCards()} cards.
+    console.log(`Welcome to FlashCards! You are playing with ${this.deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
 

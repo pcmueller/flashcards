@@ -20,7 +20,7 @@ class Round {
     if (!status) {
       this.incorrectGuesses.push(this.currentCard.id);
     }
-    
+
     this.turns++;
     this.calculatePercentCorrect();
     this.currentCard = this.deck[this.currentCard.id++];
@@ -39,7 +39,7 @@ class Round {
   }
 
   endRound() {
-      return `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`;
+    console.log(`** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`);
   }
 }
 
