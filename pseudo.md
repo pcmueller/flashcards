@@ -113,9 +113,9 @@
 - Within block, add individual test functions:
     - Test that `Deck` is a function
     - Assign `new Deck` to a variable and test that variable is an instanceOf `Deck`
-    - Test that `size` stores the correct length of passed cards array
     - Test that correct `cards` element is accessed by index
     - Test that another `cards` element is correctly accessed by index 
+    - Test that `size` stores the correct length of passed cards array
 
 
 ### Round
@@ -176,7 +176,7 @@
 
 - Create Round.js file with Round class instantiator function
 - Export Round class instantiator
-- Add constructor method with 2 argument: `cards` and 
+- Add constructor method with 1 argument: `cards`
 - Add `deck` property and assign `cards` argument as value
 - Add `currentCard` property and assign `this.deck[0]` as value
 - Add `turns` property and assign a default value of 0
@@ -185,7 +185,8 @@
 - Add 4 methods: `returnCurrentCard`, `takeTurn`, `calculatePercentCorrect`, and `endRound`
 - Add `returnCurrentCard()` functionality: should return value of `this.currentCard`
 - Add `takeTurn()` functionality:
-    - Assign a new `Turn` class instance to a `turn` variable using 2 arguments: the user's guess (must prompt for input) and the card at play.  SYNTAX: `let turn = new Turn(input, currentCard)`
+    - Assign a new `Turn` class instance to a `turn` variable using 2 arguments: the user's guess (must prompt for input) and the card at play.  
+    SYNTAX: `let turn = new Turn(input, currentCard)`
     - Declare `status` variable, invoke `turn.evaluateGuess()` and assign return as value
     - Execute a conditional to test if value of `status` is false; if so, push `this.currentCard.id` into `this.incorrectGuesses` array
     - Increment `this.turns`
