@@ -14,7 +14,8 @@ class Game {
 
   start(cardSet) {
     // add code to "create Cards" and "put Cards in Deck"
-    this.cards = cardSet.cards || prototypeQuestions;
+    // this.cards = cardSet.cards || prototypeQuestions;
+    this.cards = prototypeQuestions;
     this.currentDeck = new Deck(this.cards);
     this.currentRound = new Round(this.currentDeck);
     this.printMessage(this.currentDeck, this.currentRound);
