@@ -1,6 +1,6 @@
 class Deck {
-  constructor(cards = []) {
-    this.cards = cards;
+  constructor(cardSet = []) {
+    this.cards = cardSet;
     this.size = this.cards.length;
   }
 }

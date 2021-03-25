@@ -43,7 +43,6 @@ class Round {
       return `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`;
     }
   }
-
 }
 
 module.exports = Round;
