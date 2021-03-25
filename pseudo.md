@@ -268,7 +268,7 @@ Look at the file being run when we want to start the game. Think about where you
   - Invoke `printMessage` method with `currentDeck` and `currentRound` as arguments
   - Invoke `printQuestion` method with `currentRound` as argument
   - Should be able to "create Cards" and "put Cards in Deck", but why?  Aren't we just creating a new `Deck` with `prototypeQuestions` array as value?
-- Figure out where to invoke `Game.start` method (probably in `util.js` file?)
+- Figure out where to invoke `Game.start` (probably in `index.js` file)
 
 ##### Game-test.js
 
@@ -282,7 +282,7 @@ Look at the file being run when we want to start the game. Think about where you
 - Test that `start()` will assign new `Round` instance to value of `currentRound` property
 - All other functionality should be testable by actually running game in console
 
-##### util.js
+##### index.js
 
-- Invoke `Game.start` method and initialize new game
+- Invoke `Game.start` method to initialize new game
 - See what happens and refactor code as necessary!
