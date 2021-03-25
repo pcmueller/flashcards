@@ -34,6 +34,10 @@ Running `node index.js` from the root of your project should result in the follo
 Node server running on port 3000
 ```
 
-## Contributors
+Then your game should initialize, displaying a welcome message and the first question in your deck!
+
+## Contributor
+
+[picture](./assets/peteandsteve.jpg)
 
 * (🦥 Peter Muellerleile)[https://github.com/pcmueller]
