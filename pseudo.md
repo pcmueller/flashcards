@@ -176,7 +176,7 @@
 
 - Create Round.js file with Round class instantiator function
 - Export Round class instantiator
-- Add constructor method with 2 argument: `cards` and 
+- Add constructor method with 1 argument: `cards`
 - Add `deck` property and assign `cards` argument as value
 - Add `currentCard` property and assign `this.deck[0]` as value
 - Add `turns` property and assign a default value of 0
