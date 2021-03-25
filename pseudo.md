@@ -255,15 +255,34 @@ Look at the file being run when we want to start the game. Think about where you
 **example:**
 > game.currentRound; // => Round {...} (The new Round object that has been >instatiated)
 
-
 #### PSEUDOCODE:
 
 ##### Game.js
 
 - Connect Game.js to any required class instantiator files (i.e. Round.js)
+- Declare `currentDeck` property with no default value
 - Declare `currentRound` property with no default value
-- Add `start()` method and assign new instance of `Round` as `this.currentRound` value
+- Add `start()` method 
+  - Assign new instance of `Deck` (with `prototypeQuestions` as argument) as `currentDeck` value
+  - Assign new instance of `Round` (with `currentDeck` as argument) as `currentRound` value
+  - Invoke `printMessage` method with `currentDeck` and `currentRound` as arguments
+  - Invoke `printQuestion` method with `currentRound` as argument
+  - Should be able to "create Cards" and "put Cards in Deck", but why?  Aren't we just creating a new `Deck` with `prototypeQuestions` array as value?
+- Figure out where to invoke `Game.start` method (probably in `util.js` file?)
 
 ##### Game-test.js
 
-- 
+- Add boilerplate and require any needed class instantiator files
+- Test that `Game` is a function
+- Test that `game` is an instance of `Game`
+- Test that `game` has an undefined `currentDeck` property
+- Test that `game` has an undefined `currentRound` property
+- Test that `start()` will create Cards
+- Test that `start()` will assign new `Deck` instance to value of `currentDeck` property
+- Test that `start()` will assign new `Round` instance to value of `currentRound` property
+- All other functionality should be testable by actually running game in console
+
+##### util.js
+
+- Invoke `Game.start` method and initialize new game
+- See what happens and refactor code as necessary!
