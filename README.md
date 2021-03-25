@@ -38,6 +38,6 @@ Then your game should initialize, displaying a welcome message and the first que
 
 ## Contributor
 
-[picture](./assets/peteandsteve.jpg)
+![picture](./assets/peteandsteve.jpg)
 
 * (🦥 Peter Muellerleile)[https://github.com/pcmueller]
