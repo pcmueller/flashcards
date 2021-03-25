@@ -25,23 +25,18 @@ class Round {
     this.calculatePercentCorrect();
     this.currentCard = this.deck[this.currentCard.id++];
 
-    if (this.turns === this.deck.length) {
-      return turn.giveFeedback() + "\n" + this.endRound();
-    } else {
-      return turn.giveFeedback();
-    }
+    return turn.giveFeedback();
   }
 
   calculatePercentCorrect() {
     this.percentCorrect = Math.round((((this.turns - this.incorrectGuesses.length) / this.turns) * 100));
-    
     return this.percentCorrect;
   }
 
   endRound() {
-    if (this.turns === this.deck.length) {
-      return `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`;
-    }
+    let roundStatement = `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`
+    console.log(roundStatement);
+    return roundStatement;
   }
 }
 

@@ -1,29 +1,29 @@
-const Card = require('./Card');
-const data = require('./data');
-const Round = require('./Round');
-const Deck = require('./Deck');
-const prototypeQuestions = data.prototypeData;
 const util = require('./util');
+const data = require('./data');
+const prototypeQuestions = data.prototypeData;
+const Card = require('./Card');
+const Deck = require('./Deck');
+const Round = require('./Round');
 
 class Game {
   constructor() {
     this.cards;
-    this.currentDeck = [];
-    this.currentRound = {};
+    this.deck = [];
+    this.round = {};
+    this.status = false;
   }
 
-  start(cardSet) {
-    // add code to "create Cards" and "put Cards in Deck"
-    // this.cards = cardSet.cards || prototypeQuestions;
-    this.cards = prototypeQuestions;
-    this.currentDeck = new Deck(this.cards);
-    this.currentRound = new Round(this.currentDeck);
-    this.printMessage(this.currentDeck, this.currentRound);
-    this.printQuestion(this.currentRound);
+  start() {
+    this.cards = prototypeQuestions.map(card => new Card (card.id, card.question, card.answers, card.correctAnswer));
+    this.deck = new Deck(this.cards);
+    this.round = new Round(this.deck);
+    this.status = true;
+    this.printMessage(this.deck, this.round);
+    this.printQuestion(this.round);
   }
 
   printMessage(deck, round) {
-    console.log(`Welcome to FlashCards! You are playing with ${this.currentDeck.countCards()} cards.
+    console.log(`Welcome to FlashCards! You are playing with ${this.deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
 
