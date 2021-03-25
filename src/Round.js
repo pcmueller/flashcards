@@ -24,13 +24,8 @@ class Round {
     this.turns++;
     this.calculatePercentCorrect();
     this.currentCard = this.deck[this.currentCard.id++];
-    return turn.giveFeedback();
 
-    // if (this.turns === this.deck.length) {
-    //   return turn.giveFeedback() + "\n" + this.endRound();
-    // } else {
-    //   return turn.giveFeedback();
-    // }
+    return turn.giveFeedback();
   }
 
   calculatePercentCorrect() {
@@ -39,7 +34,9 @@ class Round {
   }
 
   endRound() {
-    console.log(`** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`);
+    let roundStatement = `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`
+    console.log(roundStatement);
+    return roundStatement;
   }
 }
 
