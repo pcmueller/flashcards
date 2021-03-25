@@ -275,8 +275,8 @@ Look at the file being run when we want to start the game. Think about where you
 - Add boilerplate and require any needed class instantiator files
 - Test that `Game` is a function
 - Test that `game` is an instance of `Game`
-- Test that `game` has an undefined `currentDeck` property
-- Test that `game` has an undefined `currentRound` property
+- Test that `currentDeck` property has an empty array as value
+- Test that `currentRound` property has an empty object as value
 - Test that `start()` will create Cards
 - Test that `start()` will assign new `Deck` instance to value of `currentDeck` property
 - Test that `start()` will assign new `Round` instance to value of `currentRound` property
