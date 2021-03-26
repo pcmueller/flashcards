@@ -10,20 +10,21 @@ class Game {
     this.cards;
     this.deck = [];
     this.round = {};
-    this.status = false;
   }
 
   start() {
-    this.cards = prototypeQuestions.map(card => new Card (card.id, card.question, card.answers, card.correctAnswer));
+    this.cards = prototypeQuestions.map(card => 
+      new Card (card.id, card.question, card.answers, card.correctAnswer));
     this.deck = new Deck(this.cards);
     this.round = new Round(this.deck);
-    this.status = true;
+    this.round.restartTimer();
     this.printMessage(this.deck, this.round);
     this.printQuestion(this.round);
   }
 
-  printMessage(deck, round) {
-    console.log(`Welcome to FlashCards! You are playing with ${this.deck.countCards()} cards.
+  printMessage() {
+    console.log(`Welcome to FlashCards! 
+    You are playing with ${this.deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
 

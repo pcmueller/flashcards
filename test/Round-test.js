@@ -10,7 +10,7 @@ describe('Round', function() {
 
   beforeEach(() => {
     card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    card2 = new Card(2,'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
+    card2 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
     card3 = new Card(3, 'What type of prototype method directly modifies the existing array?', ['mutator method', 'accessor method', 'iteration method'], 'mutator method');
     deck = new Deck([card1, card2, card3]);
     round = new Round(deck);
@@ -56,8 +56,13 @@ describe('Round', function() {
 
   it('should be able to store incorrect guesses', function() {
     round.takeTurn('array');
-
     expect(round.incorrectGuesses).to.deep.equal([1]);
+
+    round.takeTurn('array');
+    expect(round.incorrectGuesses).to.deep.equal([1]);
+
+    round.takeTurn('iteration method');
+    expect(round.incorrectGuesses).to.deep.equal([1, 3]);
   });
 
   it('should return "correct!" if guess is correct', function() {
@@ -76,13 +81,27 @@ describe('Round', function() {
     expect(round.calculatePercentCorrect()).to.equal(67);
   });
 
-  it('should notify user when game is over with percentage of correct guesses', function() {
-    round.takeTurn('object');
-    round.takeTurn('function');
-    round.takeTurn('mutator method');
+  it('should be able to start timer', function() {
+    let status = false;
 
-    round.calculatePercentCorrect();
+    round.restartTimer();
 
-    expect(round.endRound()).to.equal(`** Round over! ** You answered 67% of the questions correctly!`);
+    if (round.startTime > 0) {
+      status = true;
+    }
+    
+    expect(status).to.equal(true);
+  });
+
+  it('should be able to end round', function() {
+    let gameOver = false;
+
+    round.restartTimer();
+
+    if (typeof(round.endRound()) === 'string') {
+      gameOver = true;
+    }
+
+    expect(gameOver).to.equal(true);
   });
 });
