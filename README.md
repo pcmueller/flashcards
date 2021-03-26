@@ -4,7 +4,7 @@
 *A fun project to simulate the use of flash cards run entirely through the user's Command Line Interface (CLI).  This app cycles through a "deck" of cards, and with each card and prompt's the user to select one of three possible answers to specific question, each answer prompting a response of either "correct" or "incorrect." Once a deck has been completed the user is notified and provided with their percentage of correct answers.*
 
 ## Demonstration
-!(DEMO GIF)[https://media.giphy.com/media/uQx26qC0F2YJDUqUJl/giphy.gif]
+![App demontration GIF](https://media.giphy.com/media/uQx26qC0F2YJDUqUJl/giphy.gif)
 
 ## Installation Instructions
 
