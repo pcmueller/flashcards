@@ -16,6 +16,7 @@ class Game {
     this.cards = prototypeQuestions.map(card => new Card (card.id, card.question, card.answers, card.correctAnswer));
     this.deck = new Deck(this.cards);
     this.round = new Round(this.deck);
+    this.round.restartTimer();
     this.printMessage(this.deck, this.round);
     this.printQuestion(this.round);
   }

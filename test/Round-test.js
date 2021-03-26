@@ -56,8 +56,13 @@ describe('Round', function() {
 
   it('should be able to store incorrect guesses', function() {
     round.takeTurn('array');
-
     expect(round.incorrectGuesses).to.deep.equal([1]);
+
+    round.takeTurn('array');
+    expect(round.incorrectGuesses).to.deep.equal([1]);
+
+    round.takeTurn('iteration method');
+    expect(round.incorrectGuesses).to.deep.equal([1, 3]);
   });
 
   it('should return "correct!" if guess is correct', function() {
@@ -76,13 +81,27 @@ describe('Round', function() {
     expect(round.calculatePercentCorrect()).to.equal(67);
   });
 
-  it('should notify user when game is over with percentage of correct guesses', function() {
-    round.takeTurn('object');
-    round.takeTurn('function');
-    round.takeTurn('mutator method');
+  it('should be able to start timer', function() {
+    let status = false;
 
-    round.calculatePercentCorrect();
+    round.restartTimer();
 
-    expect(round.endRound()).to.equal(`** Round over! ** You answered 67% of the questions correctly!`);
+    if (round.startTime > 0) {
+      status = true;
+    }
+    
+    expect(status).to.equal(true);
+  });
+
+  it('should be able to end round', function() {
+    let gameOver = false;
+
+    round.restartTimer();
+
+    if (typeof(round.endRound() === 'string')) {
+      gameOver = true;
+    }
+
+    expect(gameOver).to.equal(true);
   });
 });

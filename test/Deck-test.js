@@ -32,4 +32,8 @@ describe('Deck', function() {
     expect(deck.size).to.equal(3);
   });
 
+  it('should be able to count cards', function() {
+    expect(deck.countCards()).to.equal(3);
+  });
+
 });
