@@ -30,7 +30,8 @@ class Round {
   }
 
   calculatePercentCorrect() {
-    this.percentCorrect = Math.round((((this.turns - this.incorrectGuesses.length) / this.turns) * 100));
+    this.percentCorrect = Math.round((((this.turns - 
+      this.incorrectGuesses.length) / this.turns) * 100));
 
     return this.percentCorrect;
   }
@@ -41,8 +42,8 @@ class Round {
 
   calculateTime() {
     const milliseconds = Date.now() - this.startTime;
-    const seconds = Math.floor((milliseconds/1000) % 60);
-    const minutes = Math.floor(milliseconds/60000);
+    const seconds = Math.floor((milliseconds / 1000) % 60);
+    const minutes = Math.floor(milliseconds / 60000);
     let timeStatement;
     
     if (minutes === 1) {
@@ -56,7 +57,8 @@ class Round {
 
   endRound() {
     const timeStatement = this.calculateTime();
-    const roundStatement = `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly in ${timeStatement}!`
+    const roundStatement = `** Round over! ** You answered 
+    ${this.percentCorrect}% of the questions correctly in ${timeStatement}!`
 
     console.log(roundStatement);
     return roundStatement;
