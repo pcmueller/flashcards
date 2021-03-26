@@ -4,7 +4,7 @@
 *A fun project to simulate the use of flash cards run entirely through the user's Command Line Interface (CLI).  This app cycles through a "deck" of cards, and with each card and prompt's the user to select one of three possible answers to specific question, each answer prompting a response of either "correct" or "incorrect." Once a deck has been completed the user is notified and provided with their percentage of correct answers.*
 
 ## Demonstration
-[GIF]
+!(DEMO GIF)[https://media.giphy.com/media/uQx26qC0F2YJDUqUJl/giphy.gif]
 
 ## Installation Instructions
 
@@ -34,7 +34,14 @@ Running `node index.js` from the root of your project should result in the follo
 Node server running on port 3000
 ```
 
-Your game should initialize, displaying a welcome message and the quizzing you with the first Flash Card in your deck!
+Your game should then initialize, display a welcome message and begin quizzing you with the first Flash Card in your deck!
+
+```bash
+Welcome to FlashCards! 
+    You are playing with 30 cards.
+    -----------------------------------------------------------------------
+? What allows you to define a set of related information using key-value pairs?
+```
 
 ## Contributor
 
