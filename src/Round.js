@@ -57,14 +57,11 @@ class Round {
 
   endRound() {
     const timeStatement = this.calculateTime();
-    const roundStatement = `** Round over! ** You answered 
-    ${this.percentCorrect}% of the questions correctly in ${timeStatement}!`
-
+    const roundStatement = `** Round over! ** 
+      You answered ${this.percentCorrect}% of the questions correctly in ${timeStatement}!`;
     console.log(roundStatement);
     return roundStatement;
   }
-
-  
 }
 
 module.exports = Round;
