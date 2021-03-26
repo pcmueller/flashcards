@@ -2,7 +2,9 @@
 ---
 [GitHub Repo](https://github.com/pcmueller/flashcards-starter)
 
-[Project Planning Board](https://trello.com/b/SOkAxuLZ/flash-cards-project)
+[Project Board](https://trello.com/b/SOkAxuLZ/flash-cards-project)
+
+[Planning Doc](https://github.com/pcmueller/flashcards-starter/blob/main/planning-doc.md)
 
 ## Abstract
 *A fun project to simulate the use of flash cards run entirely through the user's Command Line Interface (CLI).  This app cycles through a "deck" of cards, and with each card and prompt's the user to select one of three possible answers to specific question, each answer prompting a response of either "correct" or "incorrect." Once a deck has been completed the user is notified and provided with their percentage of correct answers.*
