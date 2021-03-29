@@ -42,6 +42,6 @@ describe('Game', function() {
   it.skip('should be able to instantiate new round and assign as value of current round', function() {
     game.start(deck);
 
-    expect(game.round.deck.length).to.equal(3);
+    expect(game.round.deck.length).to.equal(30);
   });
 });
