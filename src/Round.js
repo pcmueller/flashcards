@@ -11,8 +11,6 @@ class Round {
   }
 
   returnCurrentCard() {
-    // return this.deck.cards[this.turns];
-
     return this.currentCard;
   }
 
