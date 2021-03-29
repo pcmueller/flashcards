@@ -11,20 +11,21 @@ class Round {
   }
 
   returnCurrentCard() {
+    // return this.deck.cards[this.turns];
+
     return this.currentCard;
   }
 
   takeTurn(guess) {
     let turn = new Turn(guess, this.currentCard);
-    let status = turn.evaluateGuess();
 
-    if (!status) {
+    if (!turn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
     }
 
     this.turns++;
     this.calculatePercentCorrect();
-    this.currentCard = this.deck[this.currentCard.id++];
+    this.currentCard = this.deck[this.turns];
 
     return turn.giveFeedback();
   }
